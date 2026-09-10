@@ -33,6 +33,21 @@ body{
   line-height: 1;
 }
 
+.area-botoes {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 16px;
+}
+
+.area-botoes .btn-gerar {
+  flex: 1;
+  padding: 14px 16px;
+}
+
 .f3 {
   display:flex;
   justify-content:center;
@@ -144,16 +159,16 @@ body{
 
 .digits{
   display:flex;
-  gap:3px;
+  gap:2px;
 }
 
 .digit{
-  width:23px;
-  height:25px;
+  width:25px;
+  height:30px;
   border:2px solid var(--borda);
   border-radius:8px;
   text-align:center;
-  font-size:15px;
+  font-size:14px;
   font-weight:bold;
   color:var(--azul);
 }
@@ -166,6 +181,7 @@ body{
 .digit.locked{
   background:var(--azul);
   border-color:var(--azul);
+  text-align:center;
   color:#fff;
   caret-color:transparent;
   cursor:default;
@@ -183,9 +199,9 @@ body{
   background:var(--azul);
   color:#fff;
   border:none;
-  padding:14px 28px;
-  border-radius:30px;
-  font-size:15px;
+  padding:14px 20px;
+  border-radius:20px;
+  font-size:13px;
   font-weight:bold;
   cursor:pointer;
 }

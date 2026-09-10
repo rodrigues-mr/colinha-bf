@@ -158,6 +158,26 @@ function ligarBotaoGerar() {
   });
 }
 
+async function compartilharImagem() {
+  try {
+    const canvas = await html2canvas(document.getElementById("colinha-card"), { scale: 2 });
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+    const file = new File([blob], 'colinha-2026.png', { type: 'image/png' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        files: [file],
+        title: 'Colinha-Bruno-1077',
+        text: 'Confira minha colinha de votação para 2026!'
+      });
+    } else {
+      alert("Seu dispositivo não suporta o compartilhamento direto. Por favor, use o botão de Salvar.");
+    }
+  } catch (error) {
+    console.error("Erro ao compartilhar a imagem:", error);
+  }
+}
+
+
 // -- Start ------------------------------------------------------------------
 carregarCandidatos()
   .then(montarInterface)
