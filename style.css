@@ -171,7 +171,7 @@ body{
   font-size:14px;
   font-weight:bold;
   color:var(--azul);
-  webkit-appearance: none;
+  -webkit-appearance: none;
   appearance: none;
   padding: 0;
   margin: 0;
