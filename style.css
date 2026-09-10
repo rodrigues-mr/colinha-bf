@@ -1,0 +1,199 @@
+:root{
+  --azul: #1a2b6b;
+  --azul-claro: #eef0fb;
+  --borda: #d8dcf5;
+  --verde: #baff29;
+  --amarelo: #fdc300;
+  --grad:linear-gradient(118deg, #00559a 0%, #003f84 46%, #005da9 100%)
+}
+
+*{box-sizing:border-box;}
+
+body{
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background:var(--grad);
+  margin:0;
+  padding:24px 12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+}
+
+
+.f2 {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:0px;
+  font-size:28px;
+  font-weight:800;
+  color:var(--amarelo);
+  margin:0;
+  line-height: 1;
+}
+
+.f3 {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:0px;
+  font-size:13px;
+  font-weight:600;
+  color:#5ec5e9;
+  margin:0;
+  margin-top: -14px;
+}
+
+.card {
+  width: 420px;
+  max-width: 100%;
+  background: #fff;
+  border: 4px solid var(--amarelo);
+  border-radius: 24px;
+  padding: 20px;
+  position: relative; /* Adicionado: Essencial para posicionar a borda interna */
+  
+  /* box-shadow: 0 0 0 3px #1a2b6b inset;  <-- REMOVIDO para consertar o html2canvas */
+}
+
+/* Cria borda azul interna de forma segura para o html2canvas */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 5px solid var(--azul);
+  border-radius: 20px; 
+  pointer-events: none; 
+}
+
+.card-header{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:16px;
+}
+
+.card-header h1{
+  font-size:20px;
+  color:var(--azul);
+  margin:0;
+}
+
+.badge{
+  font-size:11px;
+  font-weight:bold;
+  color:var(--azul);
+}
+
+.office{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px;
+  border-radius:14px;
+  margin-bottom:10px;
+}
+
+.office.filled{
+  background:var(--azul-claro);
+}
+
+.avatar{
+  width:38px;
+  height:50px;
+  border-radius:20%;
+  object-fit:fit;
+  background:#e2e2ec;
+  flex-shrink:0;
+}
+
+.office-info{
+  flex:1;
+  min-width:0;
+}
+
+.office-label{
+  font-size:11px;
+  color:#8a8fa8;
+  text-transform:uppercase;
+  font-weight:600;
+}
+
+.office-name{
+  font-size:14px;
+  font-weight:bold;
+  color:#111;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.office-party{
+  font-size:12px;
+  color:#666;
+}
+
+.office-hint{
+  font-size:12px;
+  color:#aaa;
+}
+
+.digits{
+  display:flex;
+  gap:6px;
+}
+
+.digit{
+  width:32px;
+  height:38px;
+  border:2px solid var(--borda);
+  border-radius:8px;
+  text-align:center;
+  font-size:16px;
+  font-weight:bold;
+  color:var(--azul);
+}
+
+.digit:focus{
+  outline:none;
+  border-color:var(--azul);
+}
+
+.digit.locked{
+  background:var(--azul);
+  border-color:var(--azul);
+  color:#fff;
+  caret-color:transparent;
+  cursor:default;
+}
+
+.aviso{
+  text-align:center;
+  font-size:12px;
+  font-weight:bold;
+  color:#333;
+  margin-top:16px;
+}
+
+.btn-gerar{
+  background:var(--azul);
+  color:#fff;
+  border:none;
+  padding:14px 28px;
+  border-radius:30px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.btn-gerar:hover{
+  color:var(--amarelo);
+}
+
+.btn-gerar:active{
+  color:var(--verde);
+}
