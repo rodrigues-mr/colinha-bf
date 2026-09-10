@@ -124,10 +124,10 @@ body{
 }
 
 .office-name{
-  font-size:14px;
+  font-size:12px;
   font-weight:bold;
   color:#111;
-  white-space:nowrap;
+  white-space:normal;
   overflow:hidden;
   text-overflow:ellipsis;
 }
